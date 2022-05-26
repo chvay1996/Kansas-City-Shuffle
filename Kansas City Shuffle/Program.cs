@@ -11,10 +11,11 @@ namespace Kansas_City_Shuffle
             int[] arrayShuffle = new int[lengthArray];
             Random rand = new Random();
             Console.WriteLine("Массив");
+            int maxNamberRand = 10;
 
             for (int i = 0; i < lengthArray; i++)
             {
-                arrayShuffle[i] = rand.Next(10);
+                arrayShuffle[i] = rand.Next(maxNamberRand);
                 Console.Write($"{arrayShuffle[i]} ");
             }
 
@@ -30,12 +31,13 @@ namespace Kansas_City_Shuffle
 
         static void Shuffle(int[] array, int length)
         {
+            int maxNamberRand = 7;
             Random rand = new Random();
 
-            for (int i = rand.Next(7); i < length; i++)
+            for (int i = rand.Next(maxNamberRand); i < length; i++)
             {
-                int intRand = rand.Next(0, length);
-                int intRand2 = rand.Next(0, length);
+                int intRand = rand.Next(length);
+                int intRand2 = rand.Next(length);
                 int namber = array[intRand];
                 array[intRand] = array[intRand2];
                 array[intRand2] = namber;
