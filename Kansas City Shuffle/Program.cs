@@ -31,16 +31,14 @@ namespace Kansas_City_Shuffle
 
         static void Shuffle(int[] array, int length)
         {
-            int maxNamberRand = 7;
             Random rand = new Random();
 
-            for (int i = rand.Next(maxNamberRand); i < length; i++)
+            for (int i = array.Length - 1; i >= 1; i--)
             {
-                int intRand = rand.Next(length);
-                int intRand2 = rand.Next(length);
+                int intRand = rand.Next(i + 1);
                 int namber = array[intRand];
-                array[intRand] = array[intRand2];
-                array[intRand2] = namber;
+                array[intRand] = array[i];
+                array[i] = namber;
             }
         }
     }
